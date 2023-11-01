@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice/item_container.dart';
+import 'package:practice/row1.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -24,21 +26,8 @@ class _SearchPageState extends State {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Search',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
-                  ),
-                  Text(
-                    'Wifi:tw1r_413_7G',
-                    style: TextStyle(
-                        fontSize: 12, color: CupertinoColors.inactiveGray),
-                  ),
-                ],
-              ),
-              Text(
+              const Row1(),
+              const Text(
                 '3 new devices',
                 style: TextStyle(
                     fontSize: 17, color: CupertinoColors.inactiveGray),
@@ -59,37 +48,13 @@ class _SearchPageState extends State {
                                 initIndex = index1;
                               });
                             },
-                            child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 16),
-                                decoration: BoxDecoration(
-                                    border: initIndex == index1
-                                        ? Border.all(
-                                            color: Color.fromARGB(
-                                                255, 255, 179, 103))
-                                        : null,
-                                    borderRadius: BorderRadius.circular(24),
-                                    color: Color.fromARGB(255, 40, 40, 40)),
-                                height: 186,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Image.asset('assets/Bork.png'),
-                                    Text(
-                                      'Bork V530',
-                                      style: TextStyle(
-                                          fontSize: 17,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    Text(
-                                      'Vacuum cleaner',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: CupertinoColors.inactiveGray),
-                                    )
-                                  ],
-                                )),
+                            child: ItemContainer(
+                              initIndex: initIndex,
+                              index: index1,
+                              image: 'assets/Bork.png',
+                              name: 'Bork V530',
+                              description: 'Vacuum cleaner',
+                            ),
                           ),
                           GestureDetector(
                             onTap: () {
@@ -97,35 +62,13 @@ class _SearchPageState extends State {
                                 initIndex = index2;
                               });
                             },
-                            child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 16),
-                                decoration: BoxDecoration(
-                                    border: initIndex == index2
-                                        ? Border.all(
-                                            color: Color.fromARGB(
-                                                255, 255, 179, 103))
-                                        : null,
-                                    borderRadius: BorderRadius.circular(24),
-                                    color: Color.fromARGB(255, 40, 40, 40)),
-                                height: 186,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Image.asset('assets/image 9.png'),
-                                    Text('LIFX LED Light',
-                                        style: TextStyle(
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.w600)),
-                                    Text(
-                                      'Smart bulb',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: CupertinoColors.inactiveGray),
-                                    )
-                                  ],
-                                )),
+                            child: ItemContainer(
+                              initIndex: initIndex,
+                              index: index2,
+                              image: 'assets/image 9.png',
+                              name: 'LIFX LED Light',
+                              description: 'Smart bulb',
+                            ),
                           ),
                           GestureDetector(
                             onTap: () {
@@ -133,41 +76,19 @@ class _SearchPageState extends State {
                                 initIndex = index3;
                               });
                             },
-                            child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 16),
-                                decoration: BoxDecoration(
-                                    border: initIndex == index3
-                                        ? Border.all(
-                                            color: Color.fromARGB(
-                                                255, 255, 179, 103))
-                                        : null,
-                                    borderRadius: BorderRadius.circular(24),
-                                    color: Color.fromARGB(255, 40, 40, 40)),
-                                height: 186,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Image.asset('assets/image 8.png'),
-                                    Text('Xiaomi DEM-F600',
-                                        style: TextStyle(
-                                            fontSize: 17,
-                                            fontWeight: FontWeight.w600)),
-                                    Text(
-                                      'Humidifier',
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: CupertinoColors.inactiveGray),
-                                    )
-                                  ],
-                                )),
+                            child: ItemContainer(
+                              initIndex: initIndex,
+                              index: index3,
+                              image: 'assets/image 8.png',
+                              name: 'Xiaomi DEM-F600',
+                              description: 'Humidifier',
+                            ),
                           ),
                           Container(
-                              padding: EdgeInsets.symmetric(vertical: 16),
+                              padding: const EdgeInsets.symmetric(vertical: 16),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(24),
-                                  color: Color.fromARGB(255, 40, 40, 40)),
+                                  color: const Color.fromARGB(255, 40, 40, 40)),
                               height: 186,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -175,13 +96,13 @@ class _SearchPageState extends State {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Image.asset('assets/Wifi.png'),
-                                  Text(
+                                  const Text(
                                     'Not found device?',
                                     style: TextStyle(
                                         fontSize: 17,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  Text(
+                                  const Text(
                                     'Select manually',
                                     style: TextStyle(
                                         fontSize: 12,
@@ -197,16 +118,17 @@ class _SearchPageState extends State {
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 height: 63,
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color.fromARGB(255, 255, 179, 103),
+                        backgroundColor:
+                            const Color.fromARGB(255, 255, 179, 103),
                         foregroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16))),
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       'Add device',
                       style:
                           TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
